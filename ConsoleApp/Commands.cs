@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using Players;
 
 namespace Command;
@@ -14,13 +15,21 @@ class Commands{
             Console.WriteLine("/help - выводит все комманды\n/stop - останавливает программу");
         }
         if (this.com == "/create"){
-            Player p = new("", 1);
-            this.CreatePlayer(p);
+            this.CreatePlayer();
+        }
+        if (this.com == "/show"){
+            Player p = new("",1);
+            p.DisplayPlayers();
         }
     }
 
-    public void CreatePlayer(Player p){
-        p.CPlayer();
-        
+    public void CreatePlayer(){
+        string UserName;
+        int UserID;
+        Console.WriteLine("Введите UserName");
+        UserName = Console.ReadLine();
+        UserID = 1111111;
+        Player p = new(UserName, UserID);
+        p.SavePlayers(p);
     }
 }
