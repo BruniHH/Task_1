@@ -16,6 +16,9 @@ class Player{
     }
 
     public void DisplayPlayers(){
-        Console.WriteLine(all_players.Count);
+
+        foreach(var p in all_players){
+            Console.WriteLine(p.UserName);
+        }
     }
 }

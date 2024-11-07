@@ -11,7 +11,7 @@ class Program
             Commands c = new(a);
             c.WhatCmd();
 
-            if (a=="/stop"){
+            if (a=="/exit"){
                 break;
             }
         }
