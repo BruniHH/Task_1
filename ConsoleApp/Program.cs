@@ -12,7 +12,7 @@ class Program
             c.WhatCmd();
 
             if (a=="/exit"){
-                break;
+                Environment.Exit(0);
             }
         }
 	}

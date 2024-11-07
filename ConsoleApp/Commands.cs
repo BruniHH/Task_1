@@ -19,7 +19,8 @@ class Commands{
         }
         if (this.com == "/show"){
             Player p = new("",1);
-            p.DisplayPlayers();
+            string mess = Console.ReadLine();
+            p.DisplayPlayers(mess);
         }
     }
 

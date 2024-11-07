@@ -15,10 +15,12 @@ class Player{
         all_players.Add(p);
     }
 
-    public void DisplayPlayers(){
+    public void DisplayPlayers(string mess){
 
         foreach(var p in all_players){
-            Console.WriteLine(p.UserName);
+            if (mess.Contains(p.UserID.ToString())){
+                Console.WriteLine(p.UserName);
+            }
         }
     }
 }
