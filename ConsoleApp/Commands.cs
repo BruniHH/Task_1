@@ -17,10 +17,9 @@ class Commands{
         if (this.com == "/create"){
             this.CreatePlayer();
         }
-        if (this.com == "/show"){
+        if (this.com.Contains("/show")){
             Player p = new("",1);
-            string mess = Console.ReadLine();
-            p.DisplayPlayers(mess);
+            p.DisplayPlayers(this.com);
         }
     }
 
@@ -29,8 +28,10 @@ class Commands{
         int UserID;
         Console.WriteLine("Введите UserName");
         UserName = Console.ReadLine();
-        UserID = 1111111;
+        Random id = new();
+        UserID = id.Next(10000000,99999999);
         Player p = new(UserName, UserID);
+        Console.WriteLine($"Ваш ник: {UserName}\nВаш id: {UserID}");
         p.SavePlayers(p);
     }
 }

@@ -1,0 +1,5 @@
+namespace Inv;
+
+class Inventory{
+    
+}
