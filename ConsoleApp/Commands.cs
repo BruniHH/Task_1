@@ -4,32 +4,26 @@ using Players;
 namespace Command;
 
 class Commands{
-    public string com{get;set;}
 
-    public Commands(string c){
-        this.com = c;
-    }
 
-    public void WhatCmd(){
-        if (this.com == "/help"){
-            Console.WriteLine("/help - выводит все комманды\n/stop - останавливает программу");
+    public void WhatCmd(string Com){
+        if (Com == "/help")Console.WriteLine("/help - выводит все комманды\n/stop - останавливает программу");
+        if (Com == "/create"){
+            CreatePlayer();
+            return;
         }
-        if (this.com == "/create"){
-            this.CreatePlayer();
-        }
-        if (this.com.Contains("/show")){
+        if (Com.Contains("/show")){
             Player p = new("",1);
-            p.DisplayPlayers(this.com);
+            p.DisplayPlayers(Com);
         }
     }
 
     public void CreatePlayer(){
-        string UserName;
-        int UserID;
+
         Console.WriteLine("Введите UserName");
-        UserName = Console.ReadLine();
-        Random id = new();
-        UserID = id.Next(10000000,99999999);
+        string UserName = Console.ReadLine();
+        Random rnd = new();
+        int UserID = rnd.Next(10000000,99999999+1); //player
         Player p = new(UserName, UserID);
         Console.WriteLine($"Ваш ник: {UserName}\nВаш id: {UserID}");
         p.SavePlayers(p);

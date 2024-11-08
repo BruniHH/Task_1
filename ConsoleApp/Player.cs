@@ -4,7 +4,7 @@ class Player{
 
     public string UserName{get;set;}
     public int UserID{get;set;}
-    static List<Player> all_players = new List<Player>(){};
+    public static List<Player> AllPlayers = new(){};
 
     public Player(string name, int ID){
         this.UserName = name;
@@ -12,12 +12,12 @@ class Player{
     }
 
     public void SavePlayers(Player p){
-        all_players.Add(p);
+        AllPlayers.Add(p);
     }
 
     public void DisplayPlayers(string mess){
 
-        foreach(var p in all_players){
+        foreach(var p in AllPlayers){
             if (mess.Contains(p.UserID.ToString())){
                 Console.WriteLine(p.UserName);
             }

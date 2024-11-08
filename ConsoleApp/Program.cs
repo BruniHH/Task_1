@@ -3,13 +3,12 @@ class Program
 {
 	private static void Main(string[] args)
 	{
-        string a;
+        Commands c = new();
 		while(true){
             Console.WriteLine("Привет! Введи комманду -->");
-            a = Console.ReadLine();
+            string a = Console.ReadLine();
 
-            Commands c = new(a);
-            c.WhatCmd();
+            c.WhatCmd(a);
 
             if (a=="/exit"){
                 Environment.Exit(0);
