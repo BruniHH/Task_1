@@ -13,7 +13,7 @@ class Commands{
             return;
         }
         if (Com.Contains("/show")){
-            Player p = new("",1);
+            Player p = new("");
             p.DisplayPlayers(Com);
         }
     }
@@ -22,10 +22,9 @@ class Commands{
 
         Console.WriteLine("Введите UserName");
         string UserName = Console.ReadLine();
-        Random rnd = new();
-        int UserID = rnd.Next(10000000,99999999+1); //player
-        Player p = new(UserName, UserID);
-        Console.WriteLine($"Ваш ник: {UserName}\nВаш id: {UserID}");
+        Random rnd = new(); //player
+        Player p = new(UserName);
+        Console.WriteLine($"Ваш ник: {UserName}\nВаш id: {p.UserID}");
         p.SavePlayers(p);
     }
 }
