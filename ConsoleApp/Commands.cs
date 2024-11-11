@@ -1,5 +1,6 @@
 using System.Security.Cryptography.X509Certificates;
 using Players;
+using Game;
 
 namespace Command;
 
@@ -25,6 +26,6 @@ class Commands{
         Random rnd = new(); //player
         Player p = new(UserName);
         Console.WriteLine($"Ваш ник: {UserName}\nВаш id: {p.UserID}");
-        p.SavePlayers(p);
+        Program.AllPlayers.Add(p);
     }
 }

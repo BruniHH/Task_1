@@ -1,9 +1,14 @@
-﻿using Command;
-class Program
-{
-	private static void Main(string[] args)
-	{
-        Commands c = new();
+﻿using System.Dynamic;
+using Command;
+using Players;
+namespace Game;
+public class Program
+{   
+    public static List<Player> AllPlayers{ get;set; } = new();
+
+    private static void Main(string[] args)
+
+	{   Commands c = new();
 		while(true){
             Console.WriteLine("Привет! Введи комманду -->");
             string a = Console.ReadLine();

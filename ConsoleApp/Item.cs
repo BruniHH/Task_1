@@ -1,6 +1,16 @@
-namespace Item;
+public class Item
+{
+    public string Name { get; set; }
+    public int Quantity { get; set; }
 
-class Item{
-    
-    
+    public Item(string name, int quantity)
+    {
+        Name = name;
+        Quantity = quantity;
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} ({Quantity})";
+    }
 }
