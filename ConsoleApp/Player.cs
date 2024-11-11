@@ -1,23 +1,26 @@
 using Game;
+using Inv;
+using It;
 
 namespace Players;
-
-
 public class Player{
 
     public string UserName{ get;set; }
     public int UserID{ get;set; }
+    public int PosX{ get;set; }
+    public int PosY{ get;set; }
+    Inventory PlayerInv = new();
 
     public Player(string name){
         UserName = name;
         Random rnd = new();
-        UserID = rnd.Next(10000000,100000000);
+        UserID = (rnd.Next( 10000000,100000000 ));
+        PosX = rnd.Next( 0,101 );
+        PosY = rnd.Next( 0,101 );
+        PlayerInv.AddRandomItem();
     }
-
-    public void DisplayPlayers(string mess){
-
-        foreach(var p in Program.AllPlayers){
-            Console.WriteLine($"{p}");
-        }
+    public override string ToString()
+    {
+        return $"Имя пользователя:{UserName}\nID:{UserID}\nКоординаты:({PosX};{PosY})\n{PlayerInv.PlayerItems[0]}";
     }
 }

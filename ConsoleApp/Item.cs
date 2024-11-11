@@ -1,16 +1,27 @@
+namespace It;
 public class Item
 {
-    public string Name { get; set; }
-    public int Quantity { get; set; }
+    public string Name { get;set; }
+    public int Id { get;set; }
+    public static List<string> Rarities = new List<string>{
+        "common",
+        "rare",
+        "unique",
+        "mythic",
+        "legendary"
+    };
+    public string Rarity { get;set; }
 
-    public Item(string name, int quantity)
+    public Item(string name, int id)
     {
         Name = name;
-        Quantity = quantity;
+        Random rnd = new();
+        Id = id;
+        Rarity = Rarities[rnd.Next(0,(Rarities.Count-1))];
     }
 
     public override string ToString()
     {
-        return $"{Name} ({Quantity})";
+        return $"{Name} {Id} {Rarity}";
     }
 }

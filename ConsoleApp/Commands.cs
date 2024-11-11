@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using Players;
 using Game;
 
@@ -7,25 +6,24 @@ namespace Command;
 class Commands{
 
 
-    public void WhatCmd(string Com){
-        if (Com == "/help")Console.WriteLine("/help - выводит все комманды\n/stop - останавливает программу");
-        if (Com == "/create"){
-            CreatePlayer();
+    public void WhatCmd(string com){
+        if ( com.Contains("/help") )Console.WriteLine("/help - выводит все комманды\n/stop - останавливает программу");
+        if ( com.Contains("/create") ){
+            string[] parts = com.Split(" ");
+            CreatePlayer( parts[1] );
             return;
         }
-        if (Com.Contains("/show")){
-            Player p = new("");
-            p.DisplayPlayers(Com);
+        if ( com.Contains("/show") ){
+            foreach( var p in Program.AllPlayers ){
+                Console.WriteLine(p.ToString());
+            }
         }
     }
 
-    public void CreatePlayer(){
-
-        Console.WriteLine("Введите UserName");
-        string UserName = Console.ReadLine();
-        Random rnd = new(); //player
+    public void CreatePlayer(string name){
+        string UserName = name;
         Player p = new(UserName);
-        Console.WriteLine($"Ваш ник: {UserName}\nВаш id: {p.UserID}");
         Program.AllPlayers.Add(p);
+        Console.WriteLine($"Ваш ник: {UserName}\nВаш id: {p.UserID}");
     }
 }
