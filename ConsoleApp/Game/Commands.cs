@@ -39,3 +39,4 @@ public class Commands{
         Console.WriteLine( $"Ваш ник: {p.UserName}\nВаш id: {p.UserID}" );
     }
 }
+//newww
