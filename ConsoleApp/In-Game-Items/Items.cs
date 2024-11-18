@@ -1,5 +1,6 @@
-namespace Ei;
-using It;
+//Всевозможные копии класса Item, существующие в игре
+namespace ExistingObjects;
+using ClassIItem;
 public class ExistingItems{
     public static List<Item> AllItems{ get;set; } = new List<Item>{
         new Item("Stick", 1),

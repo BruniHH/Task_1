@@ -1,5 +1,6 @@
-using It;
-using Ei;
+//Инвентарь игрока
+using ClassIItem;
+using ExistingObjects;
 using Players;
 namespace Inv;
 public class Inventory

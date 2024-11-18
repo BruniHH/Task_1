@@ -1,6 +1,7 @@
-using Game;
+//Класс объекта игрок
+using Program;
 using Inv;
-using It;
+using ClassIItem;
 
 namespace Players;
 public class Player{

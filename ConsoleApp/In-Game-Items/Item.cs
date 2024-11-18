@@ -1,4 +1,5 @@
-namespace It;
+//Класс предметов для создания идентичных объектов в инвенторе игрока
+namespace ClassIItem;
 public class Item
 {
     public string Name { get;set; }

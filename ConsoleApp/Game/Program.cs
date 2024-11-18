@@ -1,10 +1,8 @@
-﻿
+﻿//Запуск программы
 using Command;
 using Players;
-namespace Game;
+namespace Program;
 public class Program{
-    public static List<Player> AllPlayers{ get;set; } = new();
-
     private static void Main(string[] args){
         Console.Clear();
         Commands c = new();
