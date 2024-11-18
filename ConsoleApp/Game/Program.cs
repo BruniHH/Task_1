@@ -1,4 +1,4 @@
-﻿using System.Dynamic;
+﻿
 using Command;
 using Players;
 namespace Game;
@@ -11,12 +11,8 @@ public class Program{
 		while(true){
             Console.WriteLine("Привет! Введи комманду -->");
             string a = Console.ReadLine();
-
             c.WhatCmd(a);
-
-            if (a=="/exit"){
-                Environment.Exit(0);
-            }
+            if (a.StartsWith("/exit")) Environment.Exit(0);
         }
 
     }
