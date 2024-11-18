@@ -2,12 +2,11 @@
 using Command;
 using Players;
 namespace Game;
-public class Program
-{   
+public class Program{
     public static List<Player> AllPlayers{ get;set; } = new();
 
-    private static void Main(string[] args)
-	{   Console.Clear();
+    private static void Main(string[] args){
+        Console.Clear();
         Commands c = new();
 		while(true){
             Console.WriteLine("Привет! Введи комманду -->");
@@ -19,5 +18,7 @@ public class Program
                 Environment.Exit(0);
             }
         }
-	}
+
+    }
+
 }
